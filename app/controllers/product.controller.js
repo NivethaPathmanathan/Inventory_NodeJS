@@ -15,7 +15,9 @@ exports.create = (req, res) => {
     ProductName: req.body.ProductName,
     BrandName: req.body.BrandName,
     Label: req.body.Label,
-    Quantity: req.body.Quantity
+    Quantity: req.body.Quantity,
+    NoReceived: req.body.NoReceived,
+    NoOfSales: req.body.NoOfSales
   });
 
   // Save Product in the database
