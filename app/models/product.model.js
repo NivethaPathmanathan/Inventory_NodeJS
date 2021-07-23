@@ -42,7 +42,7 @@ Product.findById = (ProductID, result) => {
 };
 
 Product.getAll = result => {
-  sql.query("SELECT * FROM product", (err, res) => {
+  sql.query("SELECT product.ProductId, product.ProductName, product.BrandName, product.Label, product.Quantity, purchase.NoReceived, sales.NoOfSales FROM product LEFT JOIN purchase ON purchase.ProductId = product.ProductId LEFT JOIN sales ON sales.ProductId = product.ProductId;", (err,res) =>{
     if (err) {
       console.log("error: ", err);
       result(null, err);
